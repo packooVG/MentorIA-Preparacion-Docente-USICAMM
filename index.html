@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MentorIA - Preparación Docente USICAMM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #764ba2;
+        }
+        
+        main {
+            padding: 40px 20px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        
+        .card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .card-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: opacity 0.3s;
+        }
+        
+        .card-link:hover {
+            opacity: 0.9;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .hero-section h2 {
+            border: none;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎓 MentorIA</h1>
+            <p>Simulador Inteligente para Preparación Docente - USICAMM</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#modulos">Módulos</a></li>
+                <li><a href="#caracteristicas">Características</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <!-- Sección Hero -->
+            <section id="inicio" class="hero-section">
+                <h2>Bienvenido a MentorIA</h2>
+                <p>Una plataforma innovadora diseñada para preparar y capacitar a docentes con herramientas inteligentes y recursos educativos de última generación.</p>
+                <button class="cta-button" onclick="document.getElementById('modulos').scrollIntoView({behavior: 'smooth'})">Explorar Módulos</button>
+            </section>
+            
+            <!-- Sección Módulos -->
+            <section id="modulos" class="section">
+                <h2>📚 Módulos Disponibles</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Módulo 1: Fundamentos Pedagógicos</h3>
+                        <p>Aprende los principios fundamentales de la pedagogía moderna y las teorías de aprendizaje más efectivas.</p>
+                        <span class="badge">Nivel Básico</span>
+                        <a href="#" class="card-link">Acceder →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Módulo 2: Didáctica Aplicada</h3>
+                        <p>Desarrolla estrategias didácticas innovadoras para mejorar la experiencia educativa en el aula.</p>
+                        <span class="badge">Nivel Intermedio</span>
+                        <a href="#" class="card-link">Acceder →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Módulo 3: Evaluación y Seguimiento</h3>
+                        <p>Conoce métodos modernos de evaluación y técnicas de seguimiento del aprendizaje estudiantil.</p>
+                        <span class="badge">Nivel Intermedio</span>
+                        <a href="#" class="card-link">Acceder →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Módulo 4: Tecnología Educativa</h3>
+                        <p>Integra herramientas tecnológicas en tu práctica docente para potenciar el aprendizaje.</p>
+                        <span class="badge">Nivel Avanzado</span>
+                        <a href="#" class="card-link">Acceder →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Módulo 5: Gestión del Aula</h3>
+                        <p>Domina técnicas de gestión de aula para crear un ambiente positivo y productivo.</p>
+                        <span class="badge">Nivel Intermedio</span>
+                        <a href="#" class="card-link">Acceder →</a>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Módulo 6: Desarrollo Profesional</h3>
+                        <p>Impulsa tu crecimiento profesional y adquiere competencias docentes del siglo XXI.</p>
+                        <span class="badge">Nivel Avanzado</span>
+                        <a href="#" class="card-link">Acceder →</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Características -->
+            <section id="caracteristicas" class="section">
+                <h2>✨ Características Principales</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div>
+                        <h3 style="color: #667eea; margin-bottom: 10px;">🤖 IA Inteligente</h3>
+                        <p>Simulador impulsado por inteligencia artificial que adapta el contenido a tu ritmo de aprendizaje.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #667eea; margin-bottom: 10px;">📊 Análisis Personalizado</h3>
+                        <p>Reportes detallados sobre tu progreso y recomendaciones personalizadas para mejorar.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #667eea; margin-bottom: 10px;">🎯 Escenarios Simulados</h3>
+                        <p>Practica en situaciones realistas de aula antes de enfrentarlas en el mundo real.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #667eea; margin-bottom: 10px;">👥 Comunidad Colaborativa</h3>
+                        <p>Conecta con otros docentes, comparte experiencias e intercambia mejores prácticas.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #667eea; margin-bottom: 10px;">📱 Acceso Multiplataforma</h3>
+                        <p>Accede desde cualquier dispositivo: computadora, tablet o teléfono móvil.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #667eea; margin-bottom: 10px;">🏆 Certificaciones</h3>
+                        <p>Obtén certificados reconocidos al completar los módulos y cursos.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sección Recursos -->
+            <section id="recursos" class="section">
+                <h2>📖 Recursos Útiles</h2>
+                <ul class="feature-list">
+                    <li>Biblioteca digital con más de 500 artículos y papers educativos</li>
+                    <li>Videos tutoriales y webinars con expertos en educación</li>
+                    <li>Plantillas y materiales descargables para tus clases</li>
+                    <li>Foro de discusión activo con comunidad de docentes</li>
+                    <li>Base de datos de casos de estudio exitosos</li>
+                    <li>Herramientas de planificación y organización curricular</li>
+                    <li>Acceso a investigaciones recientes en pedagogía</li>
+                    <li>Soporte técnico 24/7 disponible</li>
+                </ul>
+            </section>
+            
+            <!-- Sección Contacto -->
+            <section id="contacto" class="section">
+                <h2>📞 Contacto y Soporte</h2>
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: center;">
+                    <p style="margin-bottom: 15px;">¿Tienes preguntas? Nos encantaría escuchar de ti.</p>
+                    <button class="cta-button">Enviar Mensaje</button>
+                    <p style="margin-top: 20px; color: #666; font-size: 0.9em;">
+                        <strong>Email:</strong> soporte@mentoria.edu<br>
+                        <strong>Teléfono:</strong> +1 (XXX) XXX-XXXX<br>
+                        <strong>Ubicación:</strong> USICAMM, México
+                    </p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 MentorIA - Preparación Docente USICAMM. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                <a href="#" style="color: #667eea; text-decoration: none;">Privacidad</a> | 
+                <a href="#" style="color: #667eea; text-decoration: none;">Términos</a> | 
+                <a href="#" style="color: #667eea; text-decoration: none;">Soporte</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
